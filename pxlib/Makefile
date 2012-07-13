@@ -5,7 +5,7 @@ SOURCES=pxrc.c
 OUTPUTS=pxrc
 OBJECTS=$(SOURCES:.c=.o)
 
-all: bin/pxrc
+all: bin/pxrc bin/pxst
 
 bin/%: out/%.o
 	$(CC) $< -o $@ $(LFLAGS)
