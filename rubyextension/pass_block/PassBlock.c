@@ -7,13 +7,13 @@ static const char* data[3][2] = {
 };
   
 
-VALUE classPassBlock;
+static VALUE classPassBlock;
 
-VALUE t_init(VALUE self) {
+static VALUE t_init(VALUE self) {
   return self;
 }
 
-VALUE t_find(VALUE self) {
+static VALUE t_find(VALUE self) {
   int i;
   char buf[512];
   VALUE result;
