@@ -7,21 +7,25 @@ static const char* data[3][2] = {
 };
   
 
-VALUE classPassBlock;
+static VALUE classPassBlock;
 
-VALUE t_init(VALUE self) {
+static VALUE t_init(VALUE self) {
   return self;
 }
 
-VALUE t_find(VALUE self) {
+static VALUE t_find(VALUE self) {
   int i;
+  char buf[512];
   VALUE result;
 
   RETURN_ENUMERATOR(self, 0, NULL);
 
   for (i=0; i<3; ++i) {
+    snprintf(buf, 512, "before yield, index: %d", i);
+    rb_funcall(rb_stdout, rb_intern("puts"), 1, rb_str_new2(buf));
     result = rb_yield(rb_str_new2(data[i][0]));
-
+    snprintf(buf, 512, "after yield, index: %d", i);
+    rb_funcall(rb_stdout, rb_intern("puts"), 1, rb_str_new2(buf));
     if (RTEST(result)) {
       return rb_str_new2(data[i][1]);
     }
