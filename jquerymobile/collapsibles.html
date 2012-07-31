@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>jQuery Mobile - Page Transition</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+  </head>
+
+  <body>
+    <div data-role="page" id="page1">
+      <div data-role="header">
+	<h1>Page 1</h1>
+      </div>
+      <div data-role="content">
+	<ul data-role="listview" data-theme="e">
+	  <li><a href="#dialog1" data-transition="pop" data-rel="dialog">Standard Dialog - Pop</a></li>
+	  <li><a href="#dialog1" data-transition="flip" data-rel="dialog">Standard Dialog - Flip</a></li>
+	  <li><a href="#dialog2" data-transition="flip" data-rel="dialog">Yes-Cancel Dialog - Flip</a></li>
+	</ul>
+      </div>
+    </div>
+    <div data-role="page" id="dialog1">
+      <div data-role="header">
+	<h1>Dialog 1</h1>
+      </div>
+      <div data-role="content">
+	Dialog 1 Content
+      </div>
+      <div data-role="footer">
+	Dialog 1 Footer
+      </div>
+    </div>
+
+    <div data-role="page" id="dialog2" data-close-btn-text="Close Me">
+      <div data-role="header">
+	<h1>Dialog 2</h1>
+      </div>
+      <div data-role="content">
+	Dialog 2 Content
+	<a href="#page1" data-role="button">Cancel</a>
+	<a href="#page1" data-role="button">Yes</a>
+      </div>
+      <div data-role="footer">
+	Dialog 2 Footer
+      </div>
+    </div>
+  </body>
+</html>
