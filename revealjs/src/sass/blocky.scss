@@ -1,0 +1,48 @@
+$space-between: 10px;
+$block-height: 75vh;
+
+div.blocky5x3 {
+  height: $block-height;
+  width: 100%;
+}
+
+div.blocky5x3 > div {
+  float: left;
+  width: calc(20% - #{$space-between});
+  margin-right: $space-between;
+  height: 100%;
+}
+
+div.blocky5x3 div:last-child {
+  float: clear;
+  margin-right: 0px;
+}
+
+div.blocky5x3 > div.span3 {
+  width: calc(60% - #{$space-between});
+}
+
+div.blocky5x3 > div > div {
+  width: 100%; 
+  height: calc(#{$block-height/3} - #{$space-between});
+  margin-bottom: $space-between;
+}
+ 
+div.blocky5x3 > div > div > span {
+  line-height: calc(#{$block-height/3} - #{$space-between});
+  height: calc(#{$block-height/3} - #{$space-between});
+}
+
+div.blocky5x3 > div > div.span3 {
+  height: calc(100% - #{$space-between});
+}
+
+div.blocky5x3 .wb {
+  color: black; 
+  background-color: white; 
+}
+
+div.blocky5x3 .yb {
+  color: yellow;
+  background-color: blue; 
+}
