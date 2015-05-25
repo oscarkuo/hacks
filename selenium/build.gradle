@@ -1,0 +1,14 @@
+apply plugin: 'java'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version:'2.45.0'
+}
+
+task execute(type:JavaExec) {
+   main = 'Test'
+   classpath = sourceSets.main.runtimeClasspath
+}
